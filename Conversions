@@ -1,0 +1,61 @@
+int BinaryToDecimal(int user_num) {
+	int final_answer = 0;
+	int i = 0;
+	int a, b, c;
+	int n = user_num;
+	int count = 0;
+	while (n > 0)
+	{
+		n = n / 10;
+		++count;
+	}	int array[100];
+	for (i = 0; i < count; ++i)
+	{
+		int b = user_num % 10;
+		int c = (pow(2, i));
+		array[i] = b * c;
+		user_num = user_num / 10;
+	}
+	for (i = 0; i < count; i++) {
+		final_answer += array[i];
+	}
+	return final_answer;
+}
+int OctalToDecimal(int user_num) {
+	int final_answer = 0;
+	int i = 0;
+	int n = user_num;
+	int count = 0;
+	while (n > 0)
+	{
+		n = n / 10;
+		++count;
+	}	int array[100];
+	for (i = 0; i < count; ++i)
+	{
+		int b = user_num % 10;
+		int c = (pow(8, i));
+		array[i] = b * c;
+		user_num = user_num / 10;
+	}
+	for (i = 0; i < count; i++) {
+		final_answer += array[i];
+	}
+	return final_answer;
+}
+int BinaryToOctal(int user_num) {
+	int array[1000]; 
+	int final_answer = 0;
+	int i; 
+	int size = SizeOfInput(user_num);
+	for (i = 0; i < size; i++) {
+		array[i] = user_num % 1000; 
+		user_num /= 1000;
+
+	} 
+	for (i = 0; i < size; i++) {
+		array[i] = (array[i] % 10) + (((array[i] / 10) % 10) * 2) + (((array[i] / 100) % 10) * 4);
+		final_answer += (array[i] * (pow(10, i))); 
+	}
+		return final_answer; 
+}
