@@ -1,0 +1,28 @@
+#include <cstdlib>
+#include <ctime>
+#include <iomanip>
+#include <iostream>
+#include <string>
+#include <time.h>
+#include <cmath>
+
+using namespace std;
+
+// Conversion List (Choices)
+void ConversionList() {
+	cout << "Do you want to convert: \n    1. Binary To Decimal \n    2. Octal To Decimal \n    3. Binary To Octal \n    4. Decimal To Binary \n    5. Decimal To Heuser_num \n    6. Decimal To Octal " << endl;
+	cout << "Please enter the number of the option you would like to convert: ";
+  
+}
+
+int SizeOfInput(int user_num) {
+	int size_of_input = 0;
+	while (user_num > 0) {
+
+		user_num /= 10; 
+		size_of_input++;
+    
+	}
+
+	return size_of_input; 
+}
