@@ -1,3 +1,4 @@
+// Main Function
 int main()
 {
 	int choice;
@@ -12,18 +13,23 @@ int main()
 		switch (choice) {
 		case 1:
 			final_answer = BinaryToDecimal(user_num);
+			cout << "                " << final_answer;
 			break;
 		case 2:
 			final_answer = OctalToDecimal(user_num);
+			cout << "                " << final_answer;
 			break;
 		case 3:
 			final_answer = BinaryToOctal(user_num);
+			cout << "                " << final_answer;
+			break;
+		case 4: 
+			DecimalToBinary(user_num);
 			break;
 		default:
 			cout << "The choice entered was not valid. Enter a choice properly: ";
 			continue; 
 		}
-		cout << "                "  << final_answer;
 		cout << "\nDo you wish to continue? yes or no?" << endl;
 		cin >> cont;
 
